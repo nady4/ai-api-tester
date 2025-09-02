@@ -1,0 +1,21 @@
+{
+  "name": "ai-api-tester",
+  "version": "1.0.0",
+  "description": "Global CLI tool that intelligently generates comprehensive test suites for existing Node.js projects using AI. This is a **global npm package** that you can install once and use across **all your Node.js projects**.   Simply run `ai-api-tester` in any project directory and it will **scan your routes and controllers**,   analyze your code structure, and generate **intelligent, comprehensive tests** using AI. Perfect for adding test coverage to **existing projects** without writing tests manually,   where AI understands your codebase context and generates production-ready test suites. <br><br>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nady4/ai-api-tester.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nady4/ai-api-tester/issues"
+  },
+  "homepage": "https://github.com/nady4/ai-api-tester#readme"
+}
