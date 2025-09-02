@@ -1,51 +1,105 @@
-# 🦄 ai-api-tester
+# 🤖 ai-api-tester
 
-Global CLI tool that intelligently generates comprehensive test suites for existing Node.js projects using AI.
-This is a **global npm package** that you can install once and use across **all your Node.js projects**.  
-Simply run `ai-api-tester` in any project directory and it will **scan your routes and controllers**,  
-analyze your code structure, and generate **intelligent, comprehensive tests** using AI.
-Perfect for adding test coverage to **existing projects** without writing tests manually,  
-where AI understands your codebase context and generates production-ready test suites.
-<br><br>
+NPM package that generates comprehensive test suites for existing Node.js projects using AI.
+Install it in **any existing project** and instantly generate intelligent tests for your routes and controllers.  
+Simply run `npm install ai-api-tester` in your project and let AI analyze your code structure  
+to create **production-ready test suites** with proper mocking, assertions, and edge cases.
+Perfect for adding test coverage to **legacy projects** or accelerating development,  
+where AI understands your codebase and generates contextual tests automatically.
+
+<br>
 
 ## 🚀 Features
 
-- **Global CLI**: Install once, use in any Node.js project directory.
-- **Zero Configuration**: Works out of the box with sensible defaults for existing projects.
-- **Smart Detection**: Automatically finds routes and controllers in common project structures.
-- **AI-Powered**: Generates comprehensive tests using OpenAI, Claude, or any compatible AI API.
-- **Framework Support**: Jest and Mocha with proper mocking and assertions.
-- **Project Aware**: Respects your existing project structure and dependencies.
-  <br><br>
+- **NPM Package**: Install directly in your existing Node.js projects as a dev dependency.
+- **Smart Auto-Detection**: Automatically finds routes, controllers, and existing test setup.
+- **Zero Configuration**: Works immediately after installation with intelligent defaults.
+- **AI-Powered**: Uses OpenAI, Claude, or any compatible AI API for intelligent test generation.
+- **Framework Agnostic**: Supports Jest, Mocha, Express, Next.js, NestJS, and more.
+- **Project Integration**: Adds npm scripts and respects your existing project structure.
 
-## ⚙️ Installation
+<br>
 
-### Global Installation (Recommended)
+## ⚙️ Installation & Quick Start
 
-```bash
-npm install -g ai-api-tester
-```
-
-### Or use with npx (no installation required)
+### Install in Your Existing Project
 
 ```bash
-npx ai-api-tester --help
+# Navigate to your existing Node.js project
+cd my-awesome-project
+
+# Install as dev dependency
+npm install --save-dev ai-api-tester
+
+# Initialize (creates .env and adds npm scripts)
+npx ai-api-tester --init
+
+# Configure your AI API key in .env
+# AI_API_URL=https://api.openai.com/v1
+# AI_API_KEY=your-openai-key
+
+# Generate tests!
+npm run generate-tests
 ```
 
-### Configure your AI API
-
-Create a global config or use environment variables:
+### Alternative: Use without installation
 
 ```bash
-# Set globally (one time setup)
-ai-api-tester config --ai-url "https://api.openai.com/v1" --ai-key "your-key"
-
-# Or use environment variables
-export AI_API_URL="https://api.openai.com/v1"
-export AI_API_KEY="your_openai_api_key"
+cd my-existing-project
+npx ai-api-tester --init
+npx ai-api-tester
 ```
 
-<br><br>
+<br>
+
+## 📝 Usage
+
+### Quick Usage (Zero Config)
+
+```bash
+# Auto-detects everything and generates tests
+npm run generate-tests
+
+# Or run directly
+npx ai-api-tester
+
+# Preview without creating files
+npx ai-api-tester --dry-run
+```
+
+### Common Project Scenarios
+
+```bash
+# Express.js with standard structure
+npx ai-api-tester --routes-dir "./routes" --controllers-dir "./controllers"
+
+# Next.js API routes
+npx ai-api-tester --routes-dir "./pages/api" --tests-dir "./__tests__/api"
+
+# NestJS project
+npx ai-api-tester --routes-dir "./src" --controllers-dir "./src"
+
+# Custom structure with specific AI model
+npx ai-api-tester --routes-dir "./api" --model "gpt-4o" --test-framework "mocha"
+```
+
+### Project Integration Features
+
+```bash
+# Initialize project (one-time setup)
+npx ai-api-tester --init
+# ✓ Creates .env with AI configuration
+# ✓ Adds "generate-tests" script to package.json
+# ✓ Auto-detects your project structure
+
+# View what will be generated
+npx ai-api-tester --dry-run --verbose
+
+# Generate with custom settings
+npx ai-api-tester --model "claude-3-sonnet" --test-framework "jest"
+```
+
+<br>
 
 ## 🔗 AI API Setup
 
@@ -66,7 +120,8 @@ export AI_API_KEY="your_openai_api_key"
    AI_API_URL=https://api.anthropic.com/v1
    AI_API_KEY=sk-ant-your-claude-key
    ```
-   <br><br>
+
+<br>
 
 ## 📝 Usage
 
@@ -102,8 +157,6 @@ ai-api-tester --routes-dir "./api/routes" --controllers-dir "./api/controllers" 
 ai-api-tester --test-framework "mocha"
 ```
 
-<br>
-
 ### Configuration Management
 
 ```bash
@@ -116,8 +169,6 @@ ai-api-tester config --ai-url "https://api.openai.com/v1" --ai-key "your-key" --
 # Reset to defaults
 ai-api-tester config --reset
 ```
-
-<br>
 
 ### CLI Options
 
@@ -135,8 +186,11 @@ ai-api-tester config --reset
 ```
 
 <br>
+
 ## 🧰 Tech Stack
+
 💬 **Languages:**
+
 - TypeScript
 - Node.js
 
@@ -190,27 +244,24 @@ Your Existing Project/
 └── ...
 ```
 
-<br><br>
+<br>
 
 ## ⚡ Quick Setup
+
 ### First Time Setup (one-time)
+
 ```bash
 # Install globally
 npm install -g ai-api-tester
 
-<br><br>
-
 # Configure your AI API (choose one)
-
 ai-api-tester config --ai-url "https://api.openai.com/v1" --ai-key "your-openai-key"
-
-### OR
-
+# OR
 ai-api-tester config --ai-url "https://api.anthropic.com/v1" --ai-key "your-claude-key"
-
-````
+```
 
 ### Daily Usage (in any project)
+
 ```bash
 # Navigate to any existing project
 cd /path/to/your/project
@@ -219,9 +270,9 @@ cd /path/to/your/project
 ai-api-tester
 
 # That's it! ✨
-````
+```
 
-<br><br>
+<br>
 
 ## 🎯 Generated Test Features
 
@@ -233,8 +284,7 @@ ai-api-tester
 - ✅ **Business Logic**: Controller method testing with comprehensive scenarios
 - ✅ **Edge Cases**: Boundary conditions, null values, malformed inputs
 - ✅ **Integration Ready**: Proper setup, teardown, and test organization
-
-<br><br>
+  <br>
 
 ## 👩‍💻 Contributing
 
@@ -272,7 +322,7 @@ npm run build
 npm link  # Makes 'ai-api-tester' available globally for testing
 ```
 
-<br><br>
+<br>
 
 ## 🎯 Works with Existing Projects
 
@@ -293,7 +343,7 @@ npm link  # Makes 'ai-api-tester' available globally for testing
 - 🧪 **Test Framework Detection**: Uses Jest/Mocha based on your dependencies
 - 📁 **Output Location**: Respects existing test directory conventions
 
-<br><br>
+<br>
 
 ## 🚀 Examples
 
@@ -318,8 +368,6 @@ ai-api-tester --routes-dir "./src" --controllers-dir "./src"
 # ✅ Found: src/users/users.controller.ts, src/auth/auth.service.ts
 # ✅ Generated: src/__tests__/users/users.controller.test.ts
 ```
-
-<br>
 
 ### Generated Test Examples
 
@@ -350,7 +398,7 @@ describe("Users API Routes", () => {
 });
 ```
 
-<br><br>
+<br>
 
 ## 📄 License
 
