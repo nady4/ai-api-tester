@@ -190,7 +190,8 @@ Your Existing Project/
 └── ...
 ```
 
-<br>
+<br><br>
+
 ## ⚡ Quick Setup
 ### First Time Setup (one-time)
 ```bash
