@@ -4,7 +4,10 @@
   "description": "Global CLI tool that intelligently generates comprehensive test suites for existing Node.js projects using AI. This is a **global npm package** that you can install once and use across **all your Node.js projects**.   Simply run `ai-api-tester` in any project directory and it will **scan your routes and controllers**,   analyze your code structure, and generate **intelligent, comprehensive tests** using AI. Perfect for adding test coverage to **existing projects** without writing tests manually,   where AI understands your codebase context and generates production-ready test suites. <br><br>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,5 +20,27 @@
   "bugs": {
     "url": "https://github.com/nady4/ai-api-tester/issues"
   },
-  "homepage": "https://github.com/nady4/ai-api-tester#readme"
+  "homepage": "https://github.com/nady4/ai-api-tester#readme",
+  "dependencies": {
+    "@types/express": "^5.0.3",
+    "@types/supertest": "^6.0.3",
+    "axios": "^1.11.0",
+    "chalk": "^5.6.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.1",
+    "jest": "^30.1.2",
+    "openai": "^5.16.0",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.1",
+    "yargs": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.3.0",
+    "@types/yargs": "^17.0.33",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
 }
